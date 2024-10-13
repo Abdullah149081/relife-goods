@@ -15,17 +15,16 @@ const Header = () => {
   return (
     <Container>
       {/* logo */}
-      <div className="my-3 flex items-center justify-between">
+      <div className="my-3 flex items-center justify-between bg-black p-4 rounded-md">
         <div>
-          <img
-            className="rounded-full object-cover"
-            src="https://via.placeholder.com/40x40"
-            alt="logo"
-          />
+          <p className="text-3xl font-bold tracking-wide">
+            <span className="text-green-600">Peace</span>
+            <span className="text-yellow-500">Will</span>
+          </p>
         </div>
-        <div className="space-x-4">
+        <div className="space-x-4 mr-4">
           {nabVar.map((item, index) => (
-            <Link key={index} href={item.link} className="text-lg">
+            <Link key={index} href={item.link} className="text-lg text-white hover:text-yellow-500 duration-200 hover:underline underline-offset-8 decoration-2">
               {item.name}
             </Link>
           ))}
