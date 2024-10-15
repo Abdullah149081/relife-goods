@@ -13,18 +13,22 @@ const Header = () => {
     },
   ];
   return (
-    <Container>
+    <Container className="sticky top-0">
       {/* logo */}
-      <div className="my-3 flex items-center justify-between bg-black p-4 rounded-md">
-        <div>
+      <div className="relative z-0 my-3 flex items-center justify-between rounded-md bg-black p-4">
+        <Link href={"/"}>
           <p className="text-3xl font-bold tracking-wide">
             <span className="text-green-600">Peace</span>
             <span className="text-yellow-500">Will</span>
           </p>
-        </div>
-        <div className="space-x-4 mr-4">
+        </Link>
+        <div className="mr-4 space-x-4">
           {nabVar.map((item, index) => (
-            <Link key={index} href={item.link} className="text-lg text-white hover:text-yellow-500 duration-200 hover:underline underline-offset-8 decoration-2">
+            <Link
+              key={index}
+              href={item.link}
+              className="text-lg text-white decoration-2 underline-offset-8 duration-200 hover:text-yellow-500 hover:underline"
+            >
               {item.name}
             </Link>
           ))}
