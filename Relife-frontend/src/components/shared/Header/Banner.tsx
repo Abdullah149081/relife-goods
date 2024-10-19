@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <>
       <div className="absolute inset-0 -top-[100px] -z-50 w-full bg-[#0a5348]">
-        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 bg-black/10" />
         <Container className="relative h-full">
           <div className="flex h-full items-center justify-center">
             <div className="flex flex-col items-center gap-7">

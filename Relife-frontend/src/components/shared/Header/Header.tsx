@@ -16,7 +16,7 @@ const Header = () => {
     <Container className="sticky top-0">
       {/* logo */}
       <div className="relative z-0 my-3 flex items-center justify-between rounded-md bg-black p-4">
-        <Link href={"/"}>
+        <Link href="/">
           <p className="text-3xl font-bold tracking-wide">
             <span className="text-green-600">Peace</span>
             <span className="text-yellow-500">Will</span>

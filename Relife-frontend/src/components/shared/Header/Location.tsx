@@ -7,17 +7,17 @@ const Location = () => {
     {
       name: "Our Location",
       address: ["7x7x xxxxxxxxxx", "Dhaka, Bangladesh"],
-      icon: <MapPin className="text-r-secondary size-5" />,
+      icon: <MapPin className="size-5 text-r-secondary" />,
     },
     {
       name: "Our Hours",
       address: ["Every Day: 9am - 5pm", "Holiday Closed"],
-      icon: <Clock className="text-r-secondary size-5" />,
+      icon: <Clock className="size-5 text-r-secondary" />,
     },
     {
       name: "Current Events",
       address: ["24x xxxxxxxxxx", "Dhaka, Bangladesh"],
-      icon: <Bell className="text-r-secondary size-5" />,
+      icon: <Bell className="size-5 text-r-secondary" />,
     },
   ];
 
@@ -49,7 +49,7 @@ const Location = () => {
                 </div>
               ))}
               <div className="">
-                <Button className="bg-r-yellow rounded-full px-8 text-lg font-semibold uppercase text-gray-800 hover:bg-r-primary hover:text-white">
+                <Button className="rounded-full bg-r-yellow px-8 text-lg font-semibold uppercase text-gray-800 hover:bg-r-primary hover:text-white">
                   Donation
                 </Button>
               </div>
