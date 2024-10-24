@@ -1,3 +1,4 @@
+import AuthTabs from "@/app/(auth)/authTabs/authTabs";
 import LoginModal from "@/app/(auth)/login/components/loginModal";
 import Login from "@/app/(auth)/login/login";
 import Container from "@/components/ui/container";
@@ -35,8 +36,8 @@ const Header = () => {
             buttonName="Login"
             buttonClass="text-lg text-white decoration-2 underline-offset-8 duration-200 hover:text-yellow-500 hover:underline bg-transparent hover:bg-transparent"
           >
-            <div className="mt-24">
-              <Login />
+            <div className="mt-20">
+              <AuthTabs />
             </div>
           </LoginModal>
         </div>
