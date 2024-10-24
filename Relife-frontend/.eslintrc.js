@@ -32,6 +32,7 @@ module.exports = {
     "react/function-component-definition": 0,
     // JavaScript rules
     "prefer-const": "warn",
+    "react/jsx-props-no-spreading": "off",
     "no-var": "warn",
     "no-unused-vars": "warn",
     "object-shorthand": "warn",

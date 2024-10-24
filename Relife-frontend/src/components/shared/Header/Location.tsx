@@ -49,7 +49,7 @@ const Location = () => {
                 </div>
               ))}
               <div className="">
-                <Button className="rounded-full bg-r-yellow px-8 text-lg font-semibold uppercase text-gray-800 hover:bg-r-primary hover:text-white">
+                <Button className="rounded-full px-8 text-lg font-semibold uppercase">
                   Donation
                 </Button>
               </div>

@@ -15,7 +15,7 @@ const ReForm = ({
   children,
   onSubmit,
   resolver,
-  defaultValues,
+  defaultValues = {},
 }: TFormProps) => {
   const formConfig: TFormConfig = {};
 

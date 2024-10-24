@@ -1,15 +1,14 @@
+import LoginModal from "@/app/(auth)/login/components/loginModal";
+import Login from "@/app/(auth)/login/login";
 import Container from "@/components/ui/container";
 import Link from "next/link";
 
 const Header = () => {
   const nabVar = [
     {
+      id: 1,
       name: "All Relief Goods",
       link: "/allReliefGoods",
-    },
-    {
-      name: "Login",
-      link: "/login",
     },
   ];
   return (
@@ -23,15 +22,23 @@ const Header = () => {
           </p>
         </Link>
         <div className="mr-4 space-x-4">
-          {nabVar.map((item, index) => (
+          {nabVar.map((item) => (
             <Link
-              key={index}
+              key={item.id}
               href={item.link}
               className="text-lg text-white decoration-2 underline-offset-8 duration-200 hover:text-yellow-500 hover:underline"
             >
               {item.name}
             </Link>
           ))}
+          <LoginModal
+            buttonName="Login"
+            buttonClass="text-lg text-white decoration-2 underline-offset-8 duration-200 hover:text-yellow-500 hover:underline bg-transparent hover:bg-transparent"
+          >
+            <div className="mt-24">
+              <Login />
+            </div>
+          </LoginModal>
         </div>
       </div>
     </Container>
