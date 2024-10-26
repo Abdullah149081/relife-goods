@@ -5,6 +5,8 @@ import ReInput from "@/components/form/ReInput";
 import { Button } from "@/components/ui/button";
 import { registerSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeOff } from "lucide-react";
+import { useCallback, useState } from "react";
 import { FieldValues } from "react-hook-form";
 
 const defaultValues = {
@@ -15,9 +17,24 @@ const defaultValues = {
 };
 
 const Register = () => {
-  const handleSubmit = (values: FieldValues) => {
+  const [visibility, setVisibility] = useState({
+    password: false,
+    confirmPassword: false,
+  });
+
+  const toggleVisibility = useCallback(
+    (field: "password" | "confirmPassword") => {
+      setVisibility((prev) => ({
+        ...prev,
+        [field]: !prev[field],
+      }));
+    },
+    [],
+  );
+
+  const handleSubmit = useCallback((values: FieldValues) => {
     console.log(values);
-  };
+  }, []);
 
   return (
     <div>
@@ -43,18 +60,36 @@ const Register = () => {
               name="email"
               placeholder="Type your email"
             />
-            <ReInput
-              label="Password"
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
-            <ReInput
-              label="Confirm Password"
-              type="password"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-            />
+            <div className="relative">
+              <ReInput
+                label="Password"
+                type={visibility.password ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+              />
+              <Button
+                type="button"
+                onClick={() => toggleVisibility("password")}
+                className="r-password"
+              >
+                {visibility.password ? <Eye /> : <EyeOff />}
+              </Button>
+            </div>
+            <div className="relative">
+              <ReInput
+                label="Confirm Password"
+                type={visibility.confirmPassword ? "text" : "password"}
+                name="confirmPassword"
+                placeholder="Confirm Password"
+              />
+              <Button
+                type="button"
+                onClick={() => toggleVisibility("confirmPassword")}
+                className="r-password"
+              >
+                {visibility.confirmPassword ? <Eye /> : <EyeOff />}
+              </Button>
+            </div>
           </div>
           <Button
             type="submit"

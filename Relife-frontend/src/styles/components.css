@@ -5,4 +5,7 @@
   .r-my {
     @apply my-28;
   }
+  .r-password {
+    @apply absolute right-4 top-[45%] !bg-transparent !text-r-primary hover:!bg-transparent hover:!text-r-primary focus-visible:outline-none;
+  }
 }

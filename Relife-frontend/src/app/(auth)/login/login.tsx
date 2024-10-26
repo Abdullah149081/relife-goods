@@ -5,7 +5,9 @@ import ReInput from "@/components/form/ReInput";
 import { Button } from "@/components/ui/button";
 import { loginSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
+import { useCallback, useState } from "react";
 import { FieldValues } from "react-hook-form";
 
 const defaultValues = {
@@ -14,9 +16,15 @@ const defaultValues = {
 };
 
 const Login = () => {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
   const handleSubmit = (values: FieldValues) => {
     console.log(values);
   };
+
+  const togglePasswordVisibility = useCallback(() => {
+    setPasswordVisible((prev: boolean) => !prev);
+  }, []);
 
   return (
     <div>
@@ -36,12 +44,21 @@ const Login = () => {
               name="email"
               placeholder="Type your email"
             />
-            <ReInput
-              label="Password"
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
+            <div className="relative">
+              <ReInput
+                label="Password"
+                type={passwordVisible ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+              />
+              <Button
+                type="button"
+                onClick={togglePasswordVisibility}
+                className="r-password"
+              >
+                {passwordVisible ? <Eye /> : <EyeOff />}
+              </Button>
+            </div>
             <p className="text-end">
               <Link
                 href="/"
